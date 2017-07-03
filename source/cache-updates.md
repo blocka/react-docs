@@ -37,7 +37,7 @@ import { ApolloClient } from 'react-apollo';
 // If your database has unique IDs across all types of objects, you can use
 // a very simple function!
 const client = new ApolloClient({
-  dataIdFromObject: o => o.id
+  dataIdFromObject: o => `${o.__typename}:${o.id}`
 });
 ```
 
